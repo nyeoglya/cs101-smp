@@ -4,6 +4,9 @@
 
 **csed-101 SMP directory by *hyunseong*, POSTECH 24**
 
+> There is a [Lecture Note](https://github.com/nyeoglya/cs101-smp/blob/main/lecture_note/csed101mid.pdf) that introduces all the key concepts covered in the csed101 course before the midterm exam. Please note that this document is not yet complete, and any suggestions for improvement are welcome.
+> Additionally, [PPT Slides](https://github.com/nyeoglya/cs101-smp/tree/main/ppt) are available. Each slide deck is based on the lecture note, so you can choose either resource to study from.
+
 ## Development Environment
 ```
 Complier/Interpreter:
