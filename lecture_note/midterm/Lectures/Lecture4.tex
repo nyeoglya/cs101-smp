@@ -1,0 +1,85 @@
+\section[4. Input and Output - {\it 입력과 출력}]{4. Input and Output}
+
+\subsection{Input}
+
+입력은 입력 함수 \texttt{input()}를 입력하여 수행할 수 있다. 모든 입력은 문자열이며, 띄어쓰기로는 입력이 끝나지 않고, 엔터키를 눌러서 줄바꿈을 수행해야 입력이 끝난다. 아래는 입력을 받아 변수 a에 그 값을 저장하는 예제이다.
+
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+a = input("값을 입력하세요: ")
+print("입력된 값:", a)
+\end{minted}
+\end{tcolorbox}
+
+\subsection{Output}
+
+출력은 출력 함수 \texttt{print()}를 입력하여 수행할 수 있다. 모든 출력은 문자열이며, 특수 기호 \%를 이용하여 변수 등을 출력할 수 있다. 다음은 그 예시이다.
+
+\begin{minipage}{\textwidth} % 전체 너비 사용
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+a = 10
+print("%d %d" % (a, 100))
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\texttt{10 100}}
+\end{minipage}
+
+\begin{longtable}[]{@{}p{4cm} p{10cm}@{}}
+    \toprule
+    특수 기호 종류 & 설명 \\
+    \midrule
+    \endhead
+    \%d & 오른쪽 정렬, 10진수로 출력, 5자리 확보. 5자리 이상이면 그대로 출력. \\
+    \%x & 오른쪽 정렬, 16진수로 출력 \\
+    \%o & 오른쪽 정렬, 8진수로 출력 \\
+    \%5d & 오른쪽 정렬, 최소 5자리 확보, 5자리 이상이면 그대로 출력. \\
+    \%05d & 오른쪽 정렬, 빈자리는 0으로 채워서 최소 5자리 확보. \\
+    \%f & 실수, 기본적으로 소수점 아래 6자리까지 출력 \\
+    \%7.1f & 소수점 포함 최소 7자리 확보, 소수점 아래 1자리에서 반올림 \\
+    \%c & 문자 하나 출력. 숫자는 ASCII 문자로 변환하여 출력. 예를 들어, 10진수, 16진수, 8진수로 입력 시 해당 ASCII 문자로 변환\\
+    \%s & 문자열 출력 \\
+    \bottomrule
+\end{longtable}
+
+위의 \%가 수행했던 대응을 .format도 동일하게 수행 가능하다. format은 문자열의 매서드이다. 또한, 괄호 \{ \}를 이용하면 특수 기호를 더 세밀하게 제어 가능하다. 괄호의 첫 번째 숫자는 format 안의 매개변수의 위치를 나타낸다. 다음은 이것을 이용한 예제이다.
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+print("{1:05d}, {1:3d}, {0:d}".format(10,12))
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\texttt{00012,  12, 10}}
+\end{minipage}
+
+위의 예제에서 유의할 점은 2번째 12 앞에 공백이 하나 더 출력되었다는 것이다. 이는 3d가 최소 3자리를 확보하기 때문이다. 이때, 3자리 내에서 오른쪽 정렬되기에 " 12"가 출력된다.
+
+문자열 앞에 f를 붙이면 f-string이 되는데, 이것을 이용해도 된다. f-string에서는 중괄호 안에 표현식이나 변수를 넣어서 사용할 수 있다. 아래는 그 예시이다.
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+i = 10
+print(f"i+1={i+1}")
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\texttt{i+1=11}}
+\end{minipage}
+
+f-string에서는 f"Pi: \{number:.2f\}"와 같이 변수 이름 뒤에 콜론(:)을 붙인 뒤, 위에서 언급한 모든 종류의 format도 이용할 수 있다.
+
+문자열과 관련하여 한 가지 유용한 것이 더 있다. 파이썬은 앞에 r을 붙이면 전체 문자열을 특수 기호가 없는 문자열로 취급한다. 다음은 그것을 이용한 예제이다.
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+print(r"\n \t \\")
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\texttt{\textbackslash n \textbackslash t \textbackslash\textbackslash}}
+\end{minipage}

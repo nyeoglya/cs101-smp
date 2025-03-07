@@ -1,0 +1,174 @@
+\section[{7. Control Flow - {\it 흐름의 제어}}]{7. Control Flow}
+
+흐름을 제어하는 구문은 조건문, 반복문 2개가 있다.
+
+\subsection{Conditional Flow}
+
+특정한 조건을 만족했을 때, 주어진 코드를 실행하는 구문을 조건문이라고 부른다.
+
+\begin{itemize}
+    \item \textbf{if}: 주어진 조건식이 참이면 내부 코드가 처리되고, 반대로 거짓이면 코드가 무시되는 종류의 제어문.
+    \item \textbf{if-else}: 주어진 조건식이 참이었을 때 내부 코드가 처리되는 것은 동일하나, 거짓일 때 또 다른 종류의 코드를 실행할 수 있게 하는 종류의 제어문.
+\end{itemize}
+
+if-else 문은 아래와 같은 예제를 통해 쉽게 익힐 수 있다.
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+x = 10
+if x > 11:
+    print("x is bigger than 11")
+else:
+    print("x is smaller or equal than 11")
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\texttt{x is smaller or equal than 11}}
+\end{minipage}
+
+위에서 보이는 것처럼 if 뒤에 조건식인 x>11을 넣어서 평가하도록 하였다.
+
+if-else 구문은 여러 번 중첩해서 사용할 수도 있는데, 이럴 때는 중간에 elif라는 명령어를 넣는다. 아래는 그 예시이다.
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+def grade(x):
+    if x > 95:
+        print("A+!!!")
+    elif 95 >= x > 90:
+        print("A0!!!")
+    elif 90 >= x > 85:
+        print("A-!!!")
+    else:
+        print("Not an A...")
+
+grade(97)
+grade(89)
+grade(10)
+grade(-1)
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\begin{tabular}{l}
+A+!!! \\
+A-!!! \\
+Not an A... \\
+Not an A...
+\end{tabular}}
+\end{minipage}
+
+모든 파이썬 파일(모듈)은 \_\_name\_\_이라는 내장 변수를 가진다. 그 값은 파일이 주 파일로서 실행될 때, \_\_main\_\_로 설정된다. 반면, 만약 파일이 import 되면, \_\_name\_\_은 모듈 이름으로 설정된다. 이것을 이용하여 아래와 같이 써서 이 파일이 주 파일로서 실행될 때만 코드를 실행하게 할 수 있다.
+
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+if __name__ == "__main__":
+    pass # Do something else
+\end{minted}
+\end{tcolorbox}
+
+\subsection{Loop}
+
+반복문은 특정 조건이 만족하는 상황에서, 주어진 코드를 반복적으로 실행하는 구문이다. 반복문은 다시 for, while 2개로 종류를 구분할 수 있다.
+
+\begin{itemize}
+    \item \textbf{while문}: 주어진 조건식이 참이면 내부 코드가 반복적으로 수행함.
+    \item \textbf{for문}: 리스트와 같은 시퀸스형 데이터를 순회하며 각 요소에 대해 작업을 수행하는 것에 주로 이용함.
+\end{itemize}
+
+\subsubsection{While Loop}
+while 문 같은 경우에는 아래와 같은 예시가 존재한다.
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+i = 0
+while i<10:
+    print(f"{i}회 실행했습니다.")
+    i += 1
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\begin{tabular}{l}
+0회 실행했습니다. \\
+1회 실행했습니다. \\
+... \\
+9회 실행했습니다.
+\end{tabular}}
+\end{minipage}
+
+위의 예시에서는 변수 i에 0을 대입한 뒤, i가 10보다 작으면 내부 코드를 계속 순회하게 한다. 반복문은 코드를 잘못 작성하는 경우에, 반복이 끝나지 않고 영원히 돌아가는 오류가 발생할 수 있으므로, 조건을 철저하게 작성해야 한다.
+
+\subsubsection{For Loop}
+
+for 문 같은 경우에는 list, tuple, set과 같이 원소 여러 개가 묶여있는 자료형을 처리하는데 주로 사용한다.
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+list_a = [1, 4, 2]
+for data_a in list_a:
+    print(f"{data_a}")
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\begin{tabular}{l}
+1 \\
+4 \\
+2
+\end{tabular}}
+\end{minipage}
+
+혹은, 아래와 같은 함수를 사용하여 의도적으로 리스트를 만들고 그것을 응용할 수 있다.
+
+\begin{itemize}
+    \item range(x): 0부터 x-1까지 리스트 [0,1,2,...,x-2,x-1]를 반환. 
+    \item range(a,b,c): a부터 b-1까지 c만큼 더해가며 리스트 [a,a+c,a+2c,...]를 반환. 만약, c를 계속 더하다가 b-1을 넘어가면 b-1이 들어가지 않고 끝남.
+\end{itemize}
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+for i in range(3,10,2):
+    print(f"출력: {i}")
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\begin{tabular}{l}
+출력: 3 \\
+출력: 5 \\
+출력: 7 \\
+출력: 9
+\end{tabular}}
+\end{minipage}
+
+range 함수는 잘만 사용하면 여러 동작을 매끄럽게 처리할 수 있는 강력한 도구이기 때문에 활용을 해보려 노력하는 것이 좋다.
+
+\subsection{Continue, Break}
+
+파이썬은 반복문의 중간에서 반복문을 나가거나 조작할 수 있는 구문을 제공한다. 조건문은 아래의 키워드를 모두 무시하며, 반복문 안의 조건문 안에 해당 키워드가 있으면 바깥쪽 반복문에 영향을 끼친다.
+
+\begin{itemize}
+    \item continue: 반복문의 현재 단계를 건너뛴다.
+    \item break: 반복문을 탈출한다.
+\end{itemize}
+
+아래는 for문에서 continue를 사용하는 예제이다.
+
+\begin{minipage}{\textwidth}
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+for i in range(5):
+    if i % 2 != 0: # 홀수라면
+        continue # 다음 반복으로 건너뜀
+    print(i)
+\end{minted}
+\end{tcolorbox}
+\textbf{결과: }
+\fbox{\begin{tabular}{l}
+0 \\
+2 \\
+4
+\end{tabular}}
+\end{minipage}
