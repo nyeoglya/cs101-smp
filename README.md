@@ -12,8 +12,8 @@
 Complier/Interpreter:
 Python 3.13
 
-IDE: NeoVIM
-OS: Arch Linux
+IDE: Visual Code
+OS: Windows 11
 ```
 
 ## How to setting
