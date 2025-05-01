@@ -1,0 +1,37 @@
+\section[1. Data Structure - {\it 데이터구조}]{1. Data Structure}
+\subsection{Iterable Object}
+
+리스트 컴프리헨션List Comprehension을 통해 여러 리스트를 쉽게 만들 수 있다.
+
+\begin{itemize}
+\item \textbf{이터러블}\textit{\textsuperscript{Iterable}}: 순회 가능한 객체로 list, tuple, string 등이 해당된다.
+\item \textbf{아이템}\textit{\textsuperscript{Item}}: iterable에서 현재 항목을 나타낸다.
+\item \textbf{표현식}\textit{\textsuperscript{Expression}}: 현재의 item에 대한 연산이나 처리 결과를 나타낸다.
+\item \textbf{필터링}\textit{\textsuperscript{Filtering}}: 조건식을 넣어 값에 대한 필터링이 가능하다.
+\end{itemize}
+
+즉, 아래와 같이 쓸 수 있다.
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+[표현식 for 아이템 in 이터러블 if 조건]
+\end{minted}
+\end{tcolorbox}
+
+또한, 조건을 만족하지 않았을 때의 별도의 값도 아래와 같이 입력하여 저장이 가능하다.
+\begin{tcolorbox}[colframe=black, colback=white]
+\begin{minted}{python}
+[표현식 if 조건 else 값 for 아이템 in 이터러블]
+\end{minted}
+\end{tcolorbox}
+
+\subsection{Further Data Structures}
+
+collections은 파이썬 내장 모듈로, 다양한 데이터 구조들을 지원한다. 아래는 그 중 여러 예시이다.
+
+\begin{itemize}
+\item \textbf{스택}\textit{\textsuperscript{Stack}}: LIFO 구조이다.
+\item \textbf{큐}\textit{\textsuperscript{Queue}}: FIFO 구조이다.
+\item \textbf{디큐}\textit{\textsuperscript{Deque}}: 양쪽 끝에서 삽입과 삭제가 모두 가능하다. 스택과 큐를 모두 지원하는 것이다.
+\item \textbf{순서딕셔너리}\textit{\textsuperscript{OrderedDict}}: 입력된 순서대로 key-value를 저장한다. key 혹은 value로 데이터 정렬이 가능하다.
+\item \textbf{계수기}\textit{\textsuperscript{Counter}}: 데이터 값의 개수를 dictionary 형태로 반환한다. 리스트 안에 중복되는 데이터가 있으면 \{{[}데이터{]}:{[}개수{]},\ldots\} 형태의 리스트로 반환하는 함수이다.
+\end{itemize}

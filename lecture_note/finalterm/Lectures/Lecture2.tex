@@ -1,0 +1,143 @@
+\section[2. Object Oriented Programming - {\it 객체지향}]{2. Object Oriented Programming}
+
+\subsection{객체지향 프로그래밍}
+
+\begin{itemize}
+
+\item \textbf{절차지향 프로그래밍}\textit{\textsuperscript{Procedural Programming}}: 프로그램을 구성하는 \textbf{데이터}\textit{\textsuperscript{Data}}와 \textbf{절차}\textit{\textsuperscript{precedure}}를 분리하여 접근한다. 명령어의 순서와 함수 호출에 따라 프로그램이 작동되며, 함수는 입력된 인수 가지고 작동한 뒤 결과를 반환한다. 단순하기 때문에 구조화하기가 쉽다.
+\item \textbf{객체지향 프로그래밍}\textit{\textsuperscript{Object Oriented Programming}}: 프로그램을 객체(데이터와 함수를 하나로 묶은 것)의 모임으로 접근한다. 객체는 각자의 특성이 존재하며, 모듈화가 쉽다.
+\end{itemize}
+즉, 절차지향 프로그래밍은 함수에 보다 중점을 둔 코딩 방법이고 객체지향 프로그래밍은 객체에 중점을 둔 코딩 방법이다.\\
+여기서 중요한 점은 객체지향이 기능과 데이터를 묶은 하나의 단일 객체를 만드는데 주 목적을 두고 있다는 것이다. 가령, 자동차 추돌 사고가 있었을 때, 우리는 두 개의 자동차라고 하는 객체의 상호작용으로서 이를 해석한다. 객체지향의 아이디어는 여기에서 시작한다. 즉, 객체지향은 사람이 사물을 바라보는 관점으로 프로그램을 설계하고자 하는 관점인 것이다.
+
+\subsection{추상 데이터 타입}
+
+\textbf{추상 데이터 타입}\textit{\textsuperscript{Abstract Data Type, ADT}}은 데이터와 데이터에 적용할 수 있는 연산의 모임으로 구성된 수학적인 모델이다. 여기서 하고자 하는 것은, 모델의 논리적인 부분을 정의하고 데이터와 연산의 관계를 "추상화"하는 것이다.\\
+이 단원에서 말하고자 하는 \textbf{추상화}\textit{\textsuperscript{Abstraction}}는 어떠한 대상에서 꼭 필요한 것만 남기고 나머지를 무시하는 방식으로 진행한다. 이 과정에서 객체의 \textbf{속성}\textit{\textsuperscript{Property}}와 \textbf{기능}\textit{\textsuperscript{Method}}을 명확히 파악하고 구분해야 한다. 예를 들어, 자동차라고 하는 객체를 만들어 충돌 시뮬레이션을 하는 상황에서 자동차의 연비는 전혀 중요하지 않다. 즉, 이 상황에서 정의된 자동차 객체는 연비에 관한 데이터를 포함하지 않게 된다.\\
+ADT는 데이터와 연산을 분리하고 내부 구현을 감춘다. 이를 \textbf{캡슐화}\textit{\textsuperscript{Encapsulation}}이라고 부른다. 내부 구현을 감춘다는 것은 객체를 사용하는 사람이 내부 구현 코드가 실제로 어떻게 되어있는지 알 필요가 없다는 의미이다. 예전에 배웠던 set의 경우, 실제 구현은 최적화를 포함하여 다양한 알고리즘을 통해 구현되어 있다. 그러나, 우리가 set을 사용하는데 이러한 최적화를 전부 알 필요가 없다. 그저 set을 만들고, 교집합, 차집합과 같은 연산들만 알면 된다. 이것이 내부 구현을 감춘다는 것의 의미이다.\\
+ADT는 수학적인 모델에 불과하기에 객체지향에서는 만들어진 ADT를 실제 코드로 구현하여 사용하기 위해 \textbf{클래스}\textit{\textsuperscript{Class}}라고 하는 키워드를 지원한다.\\
+ADT를 사용하였을 때의 장점을 보다 구체적으로 정리하자면 아래와 같다.
+\begin{itemize}
+\item \textbf{모듈화와 추상화}: 코드 가독성과 유지보수 및 재사용성 증가된다.
+\item \textbf{재사용성}: ADT 통해서 만든 데이터 구조와 연산은 여러 프로그램에서 재사용이 가능하며, 데이터 구조 변경하지 않고 연산을 수정하거나 대체할 수 있다.
+\item \textbf{알고리즘과 데이터 구조의 독립성}: 서로 독립적인 개발이 가능하여, 코드의 유연성 증가되고, 새로운 알고리즘을 동일한 데이터 구조에 적용할 수 있다.
+\item \textbf{인터페이스 명확성}: 데이터와 연산의 인터페이스 명확하게 정의할 수 있기 떄문에 프로그램의 구조 이해가 쉽다.
+\item \textbf{인터페이스}\textit{\textsuperscript{Interface}}: 두 대상이 정보를 주고 받는 경계
+\item public: 파이썬의 기본 정보 접근 제한자이며, 클래스 밖에서 접근을 허용한다.
+\item private: 파이썬에서는 이름 앞에 "\_\_"를 붙여서 클래스 밖에서의 접근을 막을 수 있다.
+\end{itemize}
+
+\subsection{클래스}
+
+파이썬의 \textbf{클래스}\textit{\textsuperscript{Class}}는 데이터, 함수를 묶어서 선언할 수 있도록 만들어진 키워드로, 프로그래머가 커스텀 자료형을 만들 수 있도록 한다. 파이썬은 모든 대상을 \textbf{객체}\textit{\textsuperscript{Object}}라고 하는 개념을 사용하여 저장한다. 기본 데이터 타입도 전부 객체이며, 각 객체는 Identity, Type, Value를 갖는다. 클래스에서 데이터를 선언하는 위치를 \textbf{필드}\textit{\textsuperscript{Field}}라고 한다. 클래스에서 기능은 함수로 구현되며, 이렇게 클래스 내부에서 구현된 함수를 \textbf{메서드}\textit{\textsuperscript{Method}}라고 부른다. 모든 메서드는 내부 인스턴스의 요소들을 불러올 수 있게 self 매개변수를 갖는다.\\
+클래스 자체는 객체를 만들 수 있는 하나의 틀이며, 이에 클래스로 만든 실제 객체를 클래스 자체와 구분하여 \textbf{인스턴스}\textit{\textsuperscript{Instance}}라고 부른다. 각 인스턴스는 별개의 필드를 가지기 때문에 각 인스턴스가 전부 다른 필드 값을 가지는 것이 가능하다.\\
+클래스는 다음과 같은 여러 특수 메서드가 있다.
+\begin{itemize}
+\item \textbf{\_\_init\_\_}: \textbf{생성자}\textit{\textsuperscript{Constructor}}이다. 생성자는 인스턴스 생성 시에 무조건적으로 호출되는 특수 메서드이다. 기본 constructor는 매개변수가 self만 있다.
+\item \textbf{\_\_del\_\_}: \textbf{소멸자}\textit{\textsuperscript{Destructor}}이다. 소멸자는 인스턴스 소멸 시에 무조건적으로 호출되는 특수 메서드이다.
+\item \textbf{\_\_str\_\_}: print()의 매개변수로 인스턴스가 들어간 경우, 이 메서드의 반환 값이 들어가 print 된다.
+\item \textbf{\_\_len\_\_}: len()의 매개변수로 인스턴스가 들어간 경우, 이 메서드의 반환 값이 len 함수의 반환값이 된다.
+\end{itemize}
+
+각각의 인스턴스마다 할당된 변수를 \textbf{인스턴스 변수}\textit{\textsuperscript{Instance Variable}}라고 한다. 인스턴스 변수를 사용하기 위해서는 \textit{인스턴스.변수}를 이용하여 값을 가져올 수 있다.\\
+같은 클래스로 만들어진 모든 인스턴스가 공유하는 변수를 \textbf{클래스 변수}\textit{\textsuperscript{Class Variable}}라고 부른다. 클래스 변수는 \textit{클래스.변수}로 값을 가져올 수 있다.\\
+클래스 변수는 필드에, 인스턴스 변수는 함수 \_\_init\_\_안에 self를 붙여서 선언하는 것이 일반적이지만, 둘 다 필드에 선언한 후 \textit{인스턴스.변수} = 10과 같이 값을 할당하면 클래스 변수가 \textbf{가려지고}\textit{\textsuperscript{Shadowing}} 인스턴스 변수로 바뀌게 된다.
+
+\subsection{객체지향의 특징들}
+
+\begin{itemize}
+\item \textbf{캡슐화}\textit{\textsuperscript{Encapsulation}}: 객체의 \textbf{상태}\textit{\textsuperscript{State}}, \textbf{행위}\textit{\textsuperscript{Behavior}}를 하나로 묶고,외부에서의 접근을 제한하여 객체를 보호하는 과정. 캡슐화로로 객체의 내부 구조를 감추고 외부에 제공하는 인터페이스만 노출
+\item \textbf{정보 은닉}\textit{\textsuperscript{Information Hiding}}: 데이터 보호 위해 다른 객체 접근 제한하는 접근 제한 수식자 기능 제공
+\item \textbf{상속}\textit{\textsuperscript{Inheritance}}: 기존 클래스 필드와 매소드를 물려받아 그것을 기반으로새로운 클래스 만드는 과정. 기존 클래스 속성과 기능을 재사용하고 새로운기능 추가하여 코드 간결하게 작성 가능. 이때, 상위 클래스를 \textbf{슈퍼 클래스}\textit{\textsuperscript{Super Class}}, \textbf{부모 클래스}\textit{\textsuperscript{Parent Class}}라고 하고, 하위 클래스를 \textbf{부클래스}\textit{\textsuperscript{Subclass}}, \textbf{자식 클래스}\textit{\textsuperscript{Child Class}}라고 한다.
+\item \textbf{메서드 오버라이딩}\textit{\textsuperscript{Method Overriding}}: 부모 클래스의 메서드를 자식 클래스에서 재정의하는 것.
+\item \textbf{연산자 오버로딩}\textit{\textsuperscript{Operator Overloading}}: 필요한 연산자를 내장 타입과 형태와 동작이 유사하도록 재정의하는 것.
+\item \textbf{다형성}\textit{\textsuperscript{Polymorphism}}: 같은 이름의 메서드가 서로 다른 객체에서 다르게 동작할 수 있는 특성. 다형성을 통해 객체간의 상호작용을 쉽게 구현한다.
+\end{itemize}
+
+부모 클래스와 자식 클래스의 같은 메서드 호출에 대해 다르게 반응하도록 하는 것은 다형성의 예시이다. 즉, 이를 가능케하는 메서드 오버라이딩, 연산자 오버로딩이 다형성를 지원하는 방법 중 하나이다.
+\begin{itemize}
+\item 다형성 장점: 적은 코딩으로 다양한 객체에서 유사한 작업 수행 가능하며 코드의 가독성을 높여준다.
+\item python은 자료형을 명시하지 않아도 되기 때문에 더 쉽게 다형성을 구현해낼 수 있다. 실시간으로 객체의 자료형이 결정되므로 단 하나의 메서드에 의해 여러 객체를 처리할 수 있음.
+\end{itemize}
+
+아래는 연산자 오버로딩에 대응되는 함수들이다. 각각은 \_\_를 양쪽에 붙여서 특수 함수 꼴로 만든 다음에 이용해야 한다.
+\begin{itemize}
+\item \textbf{산술}: add, sub, mul, truediv, floordiv, mod, divmod(몫, 나머지를 tuple로 반환), pow, neg, ishift
+\item \textbf{관계}: lt, le, eq, ne, gt, ge
+\item \textbf{논리}: and, or, xor, invert($\sim$)
+\item \textbf{인덱스 접근}: getitem, setitem
+\end{itemize}
+
+피연산자 순서가 바뀌는 경우, 이름에 "r"을 붙인 메서드를 정의한다. 즉, object + 100은 add에서 처리하며, 100 + object은 radd에서 처리한다.\\
+=가 붙어있는 연산자는 이름에 "i"를 붙인 메서드를 정의한다. 즉, a += b는 iadd에서 처리한다. 이때, 연산 수행후 self나 인스턴스 등을 반환해야 한다. 이는 v1 += v2가 v1 = v1 + v2로 쪼개져 동작하기 때문이다. 즉, iadd는 값을 더한 뒤에, 반환한 값이 v1에 들어가는 형식이다.
+
+\subsection{객체지향 설계}
+
+\textbf{객체지향 설계}\textit{\textsuperscript{OOP Design}}는 요구 사항을 분석하고 이를 효율적으로 구현할 수 있는 클래스를 설계하는 과정이다.
+\begin{enumerate}
+\item \textbf{요구 사항 분석}
+    \begin{itemize}
+    \item 문제 이해하기: 시스템이 해결해야 할 문제를 이해
+    \item 기능적 요구 사항 정의: 시스템이 수행해야 할 기능을 명확히 도출
+    \item 비기능적 요구 사항 정의: 성능, 보안, 사용성 등의 비기능적 요소를 고려
+    \end{itemize}
+\item \textbf{개념 모델링}
+    \begin{itemize}
+    \item 도메인 개념 식별: 시스템과 관련된 주요 개념들을 식별
+    \item 속성 정의: 각 개념의 속성을 정의
+    \item 관계 파악: 개념들 사이의 관계를 파악
+    \end{itemize}
+\item \textbf{클래스 도출}
+    \begin{itemize}
+    \item 클래스 후보 선정: 개념 모델링에서 식별된 개념들을 바탕으로 클래스 후보를 선정
+    \item 클래스 정의: 각 클래스의 속성(개념 모델링 속성)과 메서드(시스템 기능적 요구사항)를 정의
+    \item 상속 및 연관 관계 설정: 클래스 간의 상속, 연관, 집합, 구성 등의 관계 정의
+    \end{itemize}
+\item \textbf{반복 및 정제}
+    \begin{itemize}
+        \item 반복적 검토 및 수정: 설계는 반복적인 과정이며, 새로운 요구사항이 추가되거나 변경될 때마다 클래스를 재검토하고 필요에 따라 수정
+        \item 정제: 중복을 제거하고, 불필요한 클래스를 줄이며, 클래스의 책임을 명확하게 작성
+    \end{itemize}
+\item \textbf{문서화 및 검증}
+    \begin{itemize}
+        \item UML 다이어그램 작성: 클래스 다이어그램을 통해 클래스와 그 관계를 시각적으로 표현
+        \item 검증: 설계가 모든 요구사항을 충족하는지 검증
+    \end{itemize}
+\end{enumerate}
+
+OOP 설계에서의 주의사항은 다음과 같다.
+\begin{itemize}
+\item \textbf{실세계 모델링}: OOP 설계는 실세계 문제를 모델링하는 것이므로 실세계의 개념과 프로세스를 잘 이해하는 것이 중요하다.
+\item \textbf{유연성 유지}: 요구 사항 변경에 유연하게 대응할 수 있는 설계를 고려해야 한다.
+\item \textbf{과도한 세분화 방지}: 너무 많은 클래스로 세분화하면 복잡성이 증가되므로 주의한다.
+\end{itemize}
+
+\subsection{클래스 다이어그램}
+
+클래스 관계는 클래스 관계도를 그릴 때 아주 중요한 개념이다. 각 관계를 이해하는 것은 코드를 보다 명확하게 인식하는 데에도 영향을 준다. 배우는 클래스 관계는 총 4가지가 있으며, 각각은 다음과 같다.
+\begin{enumerate}
+\item \textbf{상속}\textit{\textsuperscript{Inheritance}} (is-a relation): 한 클래스가 다른 클래스를 가져온 뒤, 일부 구현을 수정하거나 없는 기능을 넣어 변화를 주는 것이다. 무엇인가가 '종속'된다는 개념과는 무관하다.
+    \begin{itemize}
+    \item UML 관계도: 실선 \& 화살표
+    \item 예시: 포유류와 고래 클래스. 고래 클래스를 만드려면 포유류 클래스를 상속해야 한다. 고래는 포유류이지만, 포유류가 고래는 아니다.
+    \end{itemize}
+\item \textbf{연관}\textit{\textsuperscript{Association}} (use-a relation): 서로가 서로에게 소유권이 없기 때문에 종속 관계가 아니다. 서로를 알고 있지만 서로의 생명 주기에는 영향이 없다. 한 인스턴스가 다른 인스턴스를 일방적으로 쓰는 것이 보편적인 구현 방식이기 때문에 has-a relation으로도 표현된다.
+    \begin{itemize}
+    \item UML 관계도: 점선
+    \item 예시: 선생님과 학생 클래스. 서로 관련은 있지만 서로에게 속해있지는 않다. 서로가 서로의 메서드나 데이터에 영향을 주긴 한다.
+    \end{itemize}
+\item \textbf{집약}\textit{\textsuperscript{Aggregation}} (has-a relation): 연관에 whole-part 관계를 추가했다. 이 관계는 하나의 메인 클래스가 다른 하위 클래스들을 포함하는 관계이다. 메인 클래스가 하위 클래스에 대해 약한 소유권을 가지며, 하위 클래스가 메인 클래스에 종속되지는 않기에 서로의 생명 주기에 영향은 주지 않는다.
+    \begin{itemize}
+    \item UML 관계도: 실선 \& 빈 마름모
+    \item 예시: 회사 부서와 회사원 클래스. 한 부서 안에 회사원들을 묶을 수는 있지만 완전히 종속된 것은 아니다. 부서는 언제든지 옮길 수 있고, 부서가 없어져도 구성원들이 없어지지는 않는다.
+    \end{itemize}
+\item \textbf{구성}\textit{\textsuperscript{Composition}} (owns-a relation): 집약과 비슷하지만 메인 클래스가 강한 소유권을 갖는다. 즉, 클래스가 종속되기에 메인 클래스가 하위 클래스의 생명 주기에 영향을 준다. 집약이기도 하기 때문에 has-a relation이기도 하다.
+    \begin{itemize}
+    \item UML 관계도: 실선 \& 채워진 마름모
+    \item 예시: 집과 방 클래스. 집 안에 여러 방이 속해있고, 집이 없어지면 마찬가지로 집의 하위 요소였던 방도 동시에 없어진다.
+    \end{itemize}
+\end{enumerate}
+
+위의 4가지 관계 중 집약과 구성을 합쳐서 집합 관계라고 부른다.\\
+연관과 집약은 특성상 코드 구현에서 큰 차이가 없는 경우가 있다. 그러나, 둘은 의미 상의 차이점이 분명히 존재한다. 의미 상의 차이점은 코드를 더 명확히 이해하기 위함이기 때문에 굉장히 중요한 개념이다.\\
+연관은 보통 인스턴스를 메서드 매개변수로 넘겨서 한 번씩 쓰는 형태이지만, 집약은 아예 클래스 안에 리스트를 만들어놓고 거기에 주변 클래스를 다 넣어둔 뒤에, 필요할 때마다 꺼내서 쓰는 형태이다.

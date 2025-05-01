@@ -1,0 +1,24 @@
+\section[3. Sort and Search - {\it 정렬과 검색}]{3. Sort and Search}
+
+\subsection{Sort}
+
+\textbf{정렬 알고리즘}\textit{\textsuperscript{Sort Algorithm}}은 입력된 데이터를 특정한 기준에 따라 오름차순 혹은 내림차순으로 값을 정렬하는 알고리즘이다.
+\begin{itemize}
+\item \textbf{버블 정렬}\textit{\textsuperscript{Bubble Sort}}: 인접한 두 데이터를 비교하여 정렬하는 방법. 처음부터 끝까지 인접한 원소 비교하여 큰 값을 오른쪽으로 이동시킴. 이렇게 이동시킨 후, 다시 정렬 작업을 반복. 느리지만 간편함.
+\item \textbf{선택 정렬}\textit{\textsuperscript{Selection Sort}}: 배열에서 최솟값 찾아서 맨 앞의 요소와 교체하는 방법.
+\item \textbf{삽입 정렬}\textit{\textsuperscript{Insertion Sort}}: 배열의 두 번째 원소에서 시작하여 앞의 요소들과 비교하여 삽입할 위치를 결정한 다음에 삽입. selection 보다는 빠르지만 데이터 크기가 크면 효용성 떨어짐.
+\item \textbf{퀵 정렬}\textit{\textsuperscript{Quick Sort}}: 분할 정복 알고리즘. pivot 기준으로 큰 값과 작은 값을 나누어 각각에 대해 재귀적으로 정렬을 수행. 대부분의 경우에서 가장 빠른 알고리즘.
+\item \textbf{병합 정렬}\textit{\textsuperscript{Merge Sort}}: 분할 정복 알고리즘. 주어진 배열을 두 부분으로 나눈 뒤, 각각을 정렬한 후에 다시 합치는 방식. 퀵 정렬과 마찬가지로 대부분의 경우에 가장 빠름.
+\item \textbf{팀 정렬}\textit{\textsuperscript{Tim Sort}}: python의 정렬 알고리즘. 작은 부분 배열은 삽입 정렬로 처리하고 정렬된 부분 배열을 합치는데는 병합 정렬을 이용한다. 이미 정렬된 배열이나 거의 정렬된 배열을 매우 빠르게 처리한다.
+\end{itemize}
+
+파이썬은 sort, sorted 두 함수를 지원한다. sort는 리스트 함수이며, 원래 리스트를 변경하고 None을 반환한다. 반면, sorted 리스트를 받아서 정렬한 결과를 반환하며, 원래 리스트는 변경되지 않는다.\\
+두 함수 모두 key라고 하는 매개변수를 지원하며 key에 람다 함수를 넣어서 오름차순을 내림차순으로 바꾸거나, 원하는 방식의 순서를 갖도록 정렬을 할 수 있다.
+
+\subsection{Search}
+
+\textbf{검색 알고리즘}\textit{\textsuperscript{Search Algorithm}}은 데이터 리스트에서 원하는 값을 찾는 알고리즘이다.
+\begin{itemize}
+\item \textbf{순차 검색}\textit{\textsuperscript{Sequential Search}}: 리스트를 앞에서부터 순서대로 하나씩 비교하여 원하는 값을 찾는다. 정렬되지 않은 배열에도 적용 가능하지만 비효율적이다.
+\item \textbf{이진 검색}\textit{\textsuperscript{Binary Search}}: 정렬된 데이터에서 리스트의 중간 값을 검사하여 찾는 값이 더 크면 오른쪽 절반에서 다시 검색, 작으면 왼쪽 절반에서 다시 검색한다.
+\end{itemize}
