@@ -4,8 +4,9 @@
 
 **csed-101 SMP directory by *hyunseong*, POSTECH 24**
 
-> There is a [Lecture Note](https://github.com/nyeoglya/cs101-smp/blob/main/lecture_note/csed101mid.pdf) that introduces all the key concepts covered in the csed101 course before the midterm exam. Please note that this document is not yet complete, and any suggestions for improvement are welcome.
-> Additionally, [PPT Slides](https://github.com/nyeoglya/cs101-smp/tree/main/ppt) are available. Each slide deck is based on the lecture note, so you can choose either resource to study from.
+> There is a Lecture Note([Mid](https://github.com/nyeoglya/cs101-smp/blob/main/lecture_note/csed101mid.pdf), [Final](https://github.com/nyeoglya/cs101-smp/blob/main/lecture_note/csed101fin.pdf)) that introduces all the key concepts covered in the csed101 course. Please note that this document does not introduce everything, and any suggestions for improvement are welcome.
+
+> [PPT Slides](https://github.com/nyeoglya/cs101-smp/tree/main/ppt) are available. Each slide deck is based on the lecture note, but it may contains some additional images for understanding. You can choose either resource to study from.
 
 ## Development Environment
 ```
@@ -32,3 +33,4 @@ You may use any other name instead of ``svenv``.
 pip install -r requirements.txt
 ```
 
+You can find more detailed process in [Lecture 1 Slide](https://github.com/nyeoglya/cs101-smp/blob/main/ppt/lec1.pdf).
